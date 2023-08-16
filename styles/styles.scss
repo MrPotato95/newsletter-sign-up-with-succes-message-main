@@ -1,1 +1,153 @@
 @import "_reset";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+// Colors
+
+$clr-primary-tomato: hsl(4, 100%, 67%);
+$clr-primary-gradient: linear-gradient(
+  90deg,
+  rgba(255, 88, 107, 1) 0%,
+  rgba(255, 101, 71, 1) 100%
+);
+$clr-neutral-drk-slt-grey: hsl(234, 29%, 20%);
+$clr-neutral-chrcl-grey: hsl(231, 18%, 26%);
+$clr-neutral-grey: hsl(231, 7%, 60%);
+$clr-neutral-white: hsl(0, 0%, 100%);
+
+// Typography
+$ff-default: "Roboto", sans-serif;
+// Font-weight
+$fw-400: 400;
+$fw-700: 700;
+// Font-size
+$fs-100: 0.9rem;
+$fs-200: 1rem;
+$fs-300: 1.1rem;
+$fs-400: 1.3rem;
+$fs-500: 1.5rem;
+$fs-600: 2rem;
+$fs-700: 2.4rem;
+
+body {
+  font-family: $ff-default;
+}
+
+main {
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .desktop-hero-img {
+    display: none;
+  }
+
+  .mobile-hero-img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  section {
+    padding: 20px;
+    color: $clr-neutral-drk-slt-grey;
+    font-weight: $fw-400;
+
+    h1 {
+      font-size: $fs-700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: $fs-200;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      padding-left: 0px;
+      padding-bottom: 25px;
+      font-size: $fs-200;
+
+      li {
+        background: url("/assets/images/icon-list.svg") no-repeat left top;
+        list-style: none;
+        margin-top: 12px;
+        padding-left: 35px;
+        padding-bottom: 5px;
+      }
+    }
+
+    .email-form {
+      p {
+        margin-bottom: 5px;
+        font-weight: $fw-700;
+        font-size: $fs-100;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px 15px;
+        border: 1px solid $clr-neutral-grey;
+        border-radius: 10px;
+        outline: none;
+        margin-bottom: 20px;
+      }
+
+      input::placeholder {
+        color: $clr-neutral-grey;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 18px 15px;
+      border: none;
+      outline: none;
+      background-color: $clr-neutral-drk-slt-grey;
+      color: $clr-neutral-white;
+      border-radius: 10px;
+      font-weight: $fw-400;
+      font-family: $ff-default;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background: $clr-primary-gradient;
+    }
+  }
+
+  .msg-success {
+    padding: 55px 25px;
+    height: 100vh;
+
+    svg {
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: $fs-700;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 18px 15px;
+      background-color: $clr-neutral-drk-slt-grey;
+      border-radius: 10px;
+      color: $clr-neutral-white;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background: $clr-primary-gradient;
+    }
+  }
+}
