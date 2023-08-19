@@ -31,11 +31,10 @@ $fs-700: 2.4rem;
 body {
   font-family: $ff-default;
 }
-
-main {
-  width: 375px;
+.card-1 {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
 
@@ -44,12 +43,15 @@ main {
   }
 
   .mobile-hero-img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  section {
+  #left {
     padding: 20px;
     color: $clr-neutral-drk-slt-grey;
     font-weight: $fw-400;
@@ -61,7 +63,7 @@ main {
 
     p {
       font-size: $fs-200;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     ul {
@@ -75,17 +77,24 @@ main {
         margin-top: 12px;
         padding-left: 35px;
         padding-bottom: 5px;
+        font-size: $fs-200;
       }
     }
 
-    .email-form {
+    #form {
+      label {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
       p {
         margin-bottom: 5px;
         font-weight: $fw-700;
         font-size: $fs-100;
       }
 
-      input {
+      #password-input {
         width: 100%;
         padding: 15px 15px;
         border: 1px solid $clr-neutral-grey;
@@ -94,12 +103,22 @@ main {
         margin-bottom: 20px;
       }
 
-      input::placeholder {
+      #password-input:error {
+        background-color: $clr-primary-tomato;
+      }
+
+      #password-input::placeholder {
         color: $clr-neutral-grey;
+        border: 1px solid $clr-primary-tomato;
+      }
+
+      #invalid-email {
+        color: $clr-primary-tomato;
+        font-weight: $fw-400;
       }
     }
 
-    button {
+    #submit-btn {
       width: 100%;
       padding: 18px 15px;
       border: none;
@@ -111,41 +130,143 @@ main {
       font-family: $ff-default;
     }
 
-    button:hover {
+    #submit-btn:hover {
       cursor: pointer;
       background: $clr-primary-gradient;
     }
   }
 
-  .msg-success {
-    padding: 55px 25px;
-    height: 100vh;
+  #right {
+    padding: 0;
+    margin: 0;
+  }
+}
 
-    svg {
+.card-2 {
+  margin-top: 80px;
+  padding: 100px 25px;
+  height: 100vh;
+
+  img {
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    padding-bottom: 20px;
+    font-size: $fs-700;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: $fs-100;
+    margin-bottom: 20px;
+  }
+
+  #dismiss-btn {
+    font-size: $fs-100;
+    width: 100%;
+    margin-top: 90%;
+    padding: 14px 15px;
+    border: none;
+    outline: none;
+    background-color: $clr-neutral-drk-slt-grey;
+    color: $clr-neutral-white;
+    border-radius: 8px;
+    font-weight: $fw-400;
+    font-family: $ff-default;
+  }
+}
+
+@media (min-width: 480px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: $clr-neutral-drk-slt-grey;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-1 {
+    height: auto;
+    max-width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 150px 200px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: $clr-neutral-white;
+
+    .mobile-hero-img {
+      display: none;
+    }
+
+    .desktop-hero-img {
+      display: block;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    section {
+      max-width: 55%;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .msg-success {
+      display: none;
+      border-radius: 10px;
+      height: 90%;
+    }
+  }
+
+  .card-2 {
+    background-color: $clr-neutral-white;
+    display: block;
+    padding: 45px 45px;
+    margin: 300px 250px;
+    height: 55%;
+    border-radius: 18px;
+
+    img {
       margin-bottom: 15px;
     }
 
     h2 {
+      color: $clr-neutral-drk-slt-grey;
       font-size: $fs-700;
       line-height: 1.1;
       margin-bottom: 15px;
     }
 
     p {
-      margin-bottom: 20px;
+      color: $clr-neutral-drk-slt-grey;
+      font-size: $fs-100;
+      margin-bottom: 25px;
     }
 
-    button {
+    #dismiss-btn {
       width: 100%;
       border: none;
       outline: none;
       padding: 18px 15px;
+      margin-bottom: 20px;
       background-color: $clr-neutral-drk-slt-grey;
       border-radius: 10px;
       color: $clr-neutral-white;
     }
 
-    button:hover {
+    #dismiss-btn:hover {
       cursor: pointer;
       background: $clr-primary-gradient;
     }

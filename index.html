@@ -16,7 +16,6 @@
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
@@ -29,80 +28,72 @@
   </head>
   <body>
     <main>
-      <div class="mobile-hero-img">
-        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
-      </div>
-      <div class="desktop-hero-img">
-        <img
-          src="./assets/images/illustration-sign-up-desktop.svg"
-          alt="hero desktop image"
-        />
-      </div>
-      <!-- Sign-up form start -->
+      <div class="card-1">
+        <section id="left">
+          <article>
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+              <li>Product discovery and building what matters</li>
+              <li>Measuring to ensure updates are a success</li>
+              <li>And much more!</li>
+            </ul>
+          </article>
 
-      <section>
-        <article>
-          <h1>Stay updated!</h1>
-
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
-          <ul>
-            <li>Product discovery and building what matters</li>
-            <li>Measuring to ensure updates are a success</li>
-            <li>And much more!</li>
-          </ul>
-        </article>
-        <div class="email-form">
-          <p class="email-title">Email address:</p>
-          <p class="email-error">Valid email required</p>
-          <form action="email">
-            <input type="email" placeholder="email@company.com" />
-          </form>
-        </div>
-        <button>Subscribe to monthly newsletter</button>
-      </section>
-      <!-- Sign-up form end -->
-
-      <!-- Success message start -->
-      <div class="msg-success">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="64"
-          height="64"
-          viewBox="0 0 64 64"
-        >
-          <defs>
-            <linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%">
-              <stop offset="0%" stop-color="#FF6A3A" />
-              <stop offset="100%" stop-color="#FF527B" />
-            </linearGradient>
-          </defs>
-          <g fill="none">
-            <circle cx="32" cy="32" r="32" fill="url(#a)" />
-            <path
-              stroke="#FFF"
-              stroke-width="4"
-              d="m18.286 34.686 8.334 7.98 19.094-18.285"
+          <form id="form" action="email">
+            <div class="form-item">
+              <label for="email">
+                <p>Email address:</p>
+                <p id="invalid-email" class="invalid-email">
+                  Valid email required
+                </p>
+              </label>
+            </div>
+            <input
+              id="password-input"
+              type="email"
+              name="email"
+              placeholder="email@company.com"
             />
-          </g>
-        </svg>
+            <button id="submit-btn" type="submit">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </section>
+        <section id="right">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/illustration-sign-up-mobile.svg"
+            />
+            <img
+              src="./assets/images/illustration-sign-up-desktop.svg"
+              alt="Hero Image"
+            />
+          </picture>
+        </section>
+      </div>
+
+      <div class="card-2 msg-success">
+        <img src="./assets/images/icon-success.svg" alt="Icon succes" />
         <h2>Thanks for subscribing!</h2>
         <p>
-          A confirmation email has been sent to
-          <strong>ash@loremcompany.com</strong>. Please open it and click the
-          button inside to confirm your subscription.
+          A confirmation email has been sent to<strong>
+          <span id="user-email">paladaradu95@gmail.com</span></strong>. Please open it
+          and click the button inside to confirm your subscription.
         </p>
-        <button>Dismiss message</button>
+        <button id="dismiss-btn">Dismiss message</button>
       </div>
     </main>
-    <!-- Success message end -->
 
-    <div class="footer attribution">
+    <!-- <div class="footer attribution">
       Challenge by
       <a
         href="https://www.frontendmentor.io?ref=challenge"
         target="noreferrer noopener"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </div> -->
+    <script src="./script.js"></script>
   </body>
 </html>
