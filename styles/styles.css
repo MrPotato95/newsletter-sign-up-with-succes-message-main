@@ -76,15 +76,14 @@ body {
   padding: 0;
   margin-bottom: 25px;
 }
-#container #left .left-info ul li {
+#container #left .left-info ul .list-item {
   display: flex;
   align-items: flex-start;
-  list-style-position: inside;
+  list-style-type: none;
   margin-bottom: 10px;
 }
-#container #left .left-info ul li:before {
-  content: url("/assets/images/icon-list.svg");
-  height: 21px;
+#container #left .left-info ul .list-item svg {
+  margin-top: 5px;
   margin-right: 10px;
 }
 #container #form .form-item {
@@ -210,7 +209,6 @@ body {
   }
   #container #left ul li {
     margin-right: 10px;
-    margin-bottom: 16px;
   }
   #container #right picture {
     width: 100%;
@@ -225,7 +223,7 @@ body {
     color: hsl(234, 29%, 20%);
   }
   #confirmed-message h2 {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
   }
   #confirmed-message p {
     line-height: 1.4;

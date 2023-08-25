@@ -70,17 +70,16 @@ body {
         padding: 0;
         margin-bottom: 25px;
 
-        li {
+        .list-item {
           display: flex;
           align-items: flex-start;
-          list-style-position: inside;
+          list-style-type: none;
           margin-bottom: 10px;
-        }
 
-        li:before {
-          content: url('/assets/images/icon-list.svg');
-          height: 21px;
-          margin-right: 10px;
+          svg {
+            margin-top: 5px;
+            margin-right: 10px;
+          }
         }
       }
     }
@@ -229,9 +228,11 @@ body {
       }
 
       ul {
+        .list-item {
+        }
+
         li {
           margin-right: 10px;
-          margin-bottom: 16px;
         }
       }
     }
@@ -252,7 +253,7 @@ body {
     color: $clr-neutral-drk-slt-grey;
 
     h2 {
-      font-size: $fs-700;
+      font-size: $fs-500;
     }
 
     p {
