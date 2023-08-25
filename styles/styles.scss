@@ -78,7 +78,7 @@ body {
         }
 
         li:before {
-          content: url(/assets/images/icon-list.svg);
+          content: url(assets/images/icon-list.svg);
           height: 21px;
           margin-right: 10px;
         }
@@ -218,7 +218,7 @@ body {
     #left {
       padding: 10px 20px;
       grid-row: 2;
-      margin-bottom: 30px;
+      margin-bottom: 55px;
 
       h1 {
         margin-bottom: 20px;
@@ -236,13 +236,9 @@ body {
       }
     }
     #right {
-      picture  {
+      picture {
         width: 100%;
         height: auto;
-
-        source {
-          width: 100vw;
-        }
       }
     }
   }
