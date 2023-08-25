@@ -112,6 +112,7 @@ body {
         }
       }
     }
+
     #email {
       margin-bottom: 20px;
       padding: 12px 20px;
@@ -174,14 +175,14 @@ body {
   }
 
   #dismiss-message {
-    width: 100%;
-    border-radius: 8px;
+    padding: 16px;
     border: none;
     outline: none;
-    padding: 15px 20px;
+    border-radius: 8px;
     color: $clr-neutral-white;
     background-color: $clr-neutral-drk-slt-grey;
     font-weight: $fw-700;
+    width: 100%;
   }
 
   #dismiss-message:hover {
@@ -213,7 +214,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
     gap: 10px;
-    
+
     #left {
       padding: 10px 20px;
       grid-row: 2;
@@ -235,9 +236,13 @@ body {
       }
     }
     #right {
-      picture {
+      picture  {
         width: 100%;
         height: auto;
+
+        source {
+          width: 100vw;
+        }
       }
     }
   }
@@ -246,7 +251,20 @@ body {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
+    padding-top: 100px;
+    line-height: 1.2;
+    color: $clr-neutral-drk-slt-grey;
+
+    h2 {
+      font-size: $fs-700;
+    }
+
+    p {
+      line-height: 1.4;
+    }
+
+    #dismiss-message {
+      margin-top: 80%;
+    }
   }
-
-
 }

@@ -161,14 +161,14 @@ body {
   margin: 32px 0;
 }
 .confirmed-message #dismiss-message {
-  width: 100%;
-  border-radius: 8px;
+  padding: 16px;
   border: none;
   outline: none;
-  padding: 15px 20px;
+  border-radius: 8px;
   color: hsl(0, 0%, 100%);
   background-color: hsl(234, 29%, 20%);
   font-weight: 700;
+  width: 100%;
 }
 .confirmed-message #dismiss-message:hover {
   background: linear-gradient(90deg, rgb(226, 58, 128) 0%, rgb(255, 98, 87) 76%);
@@ -216,9 +216,24 @@ body {
     width: 100%;
     height: auto;
   }
+  #container #right picture source {
+    width: 100vw;
+  }
   #confirmed-message {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
+    padding-top: 100px;
+    line-height: 1.2;
+    color: hsl(234, 29%, 20%);
+  }
+  #confirmed-message h2 {
+    font-size: 2.4rem;
+  }
+  #confirmed-message p {
+    line-height: 1.4;
+  }
+  #confirmed-message #dismiss-message {
+    margin-top: 80%;
   }
 }/*# sourceMappingURL=styles.css.map */
