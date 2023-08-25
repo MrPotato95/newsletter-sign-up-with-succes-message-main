@@ -193,12 +193,14 @@ body {
     height: 100vh;
     border-radius: 0;
     padding: 0;
-    gap: 0;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
   }
   #container #left {
-    padding: 16px 32px;
+    padding: 10px 20px;
     grid-row: 2;
+    margin-bottom: 30px;
   }
   #container #left h1 {
     margin-bottom: 20px;
@@ -210,14 +212,13 @@ body {
     margin-right: 10px;
     margin-bottom: 16px;
   }
-  #container #right img {
+  #container #right picture {
     width: 100%;
+    height: auto;
   }
-  #right img {
-    width: 100%;
-  }
-  #container.success {
-    display: block;
-    padding: initial;
+  #confirmed-message {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
   }
 }/*# sourceMappingURL=styles.css.map */
