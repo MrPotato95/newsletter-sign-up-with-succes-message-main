@@ -4,10 +4,11 @@
 // Colors
 
 $clr-primary-tomato: hsl(4, 100%, 67%);
+$clr-bckg-primary-tomato: hsla(4, 100%, 67%, 0.2);
 $clr-primary-gradient: linear-gradient(
   90deg,
-  rgba(255, 88, 107, 1) 0%,
-  rgba(255, 101, 71, 1) 100%
+  rgba(226, 58, 128, 1) 0%,
+  rgba(255, 98, 87, 1) 76%
 );
 $clr-neutral-drk-slt-grey: hsl(234, 29%, 20%);
 $clr-neutral-chrcl-grey: hsl(231, 18%, 26%);
@@ -27,40 +28,224 @@ $fs-400: 1.3rem;
 $fs-500: 1.5rem;
 $fs-600: 2rem;
 $fs-700: 2.4rem;
+$fs-800: 3rem;
 
 body {
   font-family: $ff-default;
   background-color: $clr-neutral-drk-slt-grey;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
 }
 
-.container {
-  width: 750px;
+#container {
+  max-width: 800px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
   background-color: $clr-neutral-white;
   border-radius: 16px;
-  padding: 20px; //TO DO fix padding and add margin
+  margin: 0;
+  padding: 20px;
 
-  .left {
+  #left {
     color: $clr-neutral-drk-slt-grey;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    padding: 2rem 1rem;
 
-    h1 {
-      font-size: $fs-700;
-      margin-bottom: 15px;
+    .left-info {
+      h1 {
+        font-size: $fs-800;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: $fs-200;
+      }
+
+      ul {
+        font-size: $fs-200;
+        padding: 0;
+        margin-bottom: 25px;
+
+        li {
+          display: flex;
+          align-items: flex-start;
+          list-style-position: inside;
+          margin-bottom: 10px;
+        }
+
+        li:before {
+          content: url(/assets/images/icon-list.svg);
+          height: 21px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  #form {
+    .form-item {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          font-size: $fs-100;
+          font-weight: $fw-700;
+          margin-bottom: 10px;
+        }
+
+        #invalid-email {
+          display: none;
+        }
+
+        #invalid-email.active {
+          display: initial;
+          color: $clr-primary-tomato;
+          font-size: $fs-100;
+        }
+      }
+    }
+    #email {
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid $clr-neutral-grey;
+    }
+
+    #email:focus {
+      outline: none;
+      border: 1px solid $clr-neutral-grey;
+    }
+
+    #email.active {
+      background-color: $clr-bckg-primary-tomato;
+      border: 1px solid $clr-primary-tomato;
+    }
+
+    #submit-btn {
+      padding: 16px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      color: $clr-neutral-white;
+      background-color: $clr-neutral-drk-slt-grey;
+      font-weight: $fw-700;
+    }
+
+    #submit-btn:hover {
+      cursor: pointer;
+      background: rgb(226, 58, 128);
+      box-shadow: 0 10px 30px #e23a80;
+      background: $clr-primary-gradient;
     }
   }
 }
 
-.confirmed-message {
+#container.success {
   display: none;
+}
+
+.confirmed-message {
+  background-color: $clr-neutral-white;
+  width: 450px;
+  padding: 25px;
+  border-radius: 18px;
+  display: none;
+  line-height: 1.2;
+
+  img {
+    width: 80px;
+  }
+
+  h2 {
+    font-size: $fs-800;
+    margin-top: 32px;
+  }
+
+  p {
+    margin: 32px 0;
+  }
+
+  #dismiss-message {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    color: $clr-neutral-white;
+    background-color: $clr-neutral-drk-slt-grey;
+    font-weight: $fw-700;
+  }
+
+  #dismiss-message:hover {
+    background: $clr-primary-gradient;
+    cursor: pointer;
+    box-shadow: 0 10px 30px #e23a80;
+  }
+
+  #user-email {
+    font-weight: $fw-700;
+  }
+}
+
+.confirmed-message.active {
+  display: block;
+  width: 450px;
+}
+
+@media (max-width: 768px) {
+  body {
+    display: initial;
+  }
+
+  #container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+    gap: 0;
+    grid-template-columns: 1fr;
+
+    #left {
+      padding: 16px 32px;
+      grid-row: 2;
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-right: 10px;
+      }
+
+      ul {
+        li {
+          margin-right: 10px;
+          margin-bottom: 16px;
+        }
+      }
+    }
+    #right {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  #right {
+    img {
+      width: 100%;
+    }
+  }
+
+  #container.success {
+    display: block;
+    padding: initial;
+  }
 }

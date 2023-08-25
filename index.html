@@ -12,19 +12,11 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles/styles.css" />
+    <script defer src="./script.js"></script>
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
 
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <div id="container" class="container">
@@ -43,7 +35,7 @@
         <form id="form">
           <div class="form-item">
             <label for="email"
-              ><p>Email Adress</p>
+              ><p>Email address</p>
               <p id="invalid-email" class="invalid-email">
                 Valid email required
               </p>
@@ -74,18 +66,16 @@
           />
         </picture>
       </div>
-
-      <div id="confirmed-message" class="confirmed-message">
-        <img src="./assets/images/icon-success.svg" alt="confirmed icon" />
-        <h2>Thanks for subscribing</h2>
-        <p>
-          A confirmation email has ben set to
-          <span id="user-email"></span>.Please open it and click the button
-          inside to confirm your subscribtion.
-        </p>
-        <button id="dismiss-message">Dismiss message</button>
-      </div>
     </div>
-    <script src="./script.js"></script>
+    <div id="confirmed-message" class="confirmed-message">
+      <img src="./assets/images/icon-success.svg" alt="confirmed icon" />
+      <h2>Thanks for subscribing</h2>
+      <p>
+        A confirmation email has ben set to
+        <span id="user-email"></span>.Please open it and click the button inside
+        to confirm your subscribtion.
+      </p>
+      <button id="dismiss-message">Dismiss message</button>
+    </div>
   </body>
 </html>
